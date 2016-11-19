@@ -1,66 +1,15 @@
-# vue-analytics-facebook-pixel
+# vue-material-radio
 
-[![npm](https://img.shields.io/npm/v/vue-analytics-facebook-pixel.svg)](https://www.npmjs.com/package/vue-analytics-facebook-pixel)
+[![Build Status](https://travis-ci.org/wemake-services/vue-material-radio.svg?branch=master)](https://travis-ci.org/wemake-services/vue-material-radio) [![Coverage Status](https://coveralls.io/repos/github/wemake-services/vue-material-radio/badge.svg?branch=master)](https://coveralls.io/github/wemake-services/vue-material-radio?branch=master)
 
-A small wrapper around fbq. This package integrates Facebook pixel into your `Vue` app.
+Simple implementation of Material Radio Button with no dependencies.
 
 ## Installation
 
 ```bash
-npm install vue-analytics-facebook-pixel
+npm install vue-material-radio
 ```
-
-Also, this library requires installing [Facebook Pixel API](https://developers.facebook.com/docs/ads-for-websites/tag-api/).
 
 ## Usage
 
-### Preparations
-
-```javascript
-import Vue from 'Vue'
-import VueFacebookPixel from 'vue-analytics-facebook-pixel'
-
-Vue.use(VueFacebookPixel)
-```
-
-### Calling API
-
-To start using this script you will have to call `init(...)` first.
-
-```javascript
-/**
- * Init facebook tracking pixel
- * @param  {String} appId
- * @param  {object} [data={}]
- */
-Vue.analytics.fbq.init('YOUR_FACEBOOK_CODE', {
-  em: 'user@mail.com'
-})
-```
-
-Make sure `init(...)` is called only once.
-
-Then you will have full access to the `event(...)` method.
-
-```javascript
-/**
- * Event tracking
- * @param  {String} name
- * @param  {object} [data={}]
- */
-Vue.analytics.fbq.event('ViewContent', {
-  content_name: 'Really Fast Running Shoes'
-})
-```
-
-#### Inside component
-
-All `component` instances can call `this.$analytics.fbq`
-
-## Naming convention
-
-All `vue-analytics-*` share the same `analytics` object, where all the providers are stored.
-
-## Facebook script
-
-[Facebook Pixel API](https://developers.facebook.com/docs/ads-for-websites/tag-api/) is required to be installed. You can skip the default `window.fbq('init', 'KEY')` part and use `Vue.analytics.fbq.init(...)` which will do the same.
+For more examples, please check [`/play`](https://github.com/wemake-services/vue-material-radio/tree/master/play) folder and the [project's website](http://wemake.services/vue-material-radio).

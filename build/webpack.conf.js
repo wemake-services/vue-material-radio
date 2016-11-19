@@ -1,38 +1,59 @@
 var path = require('path')
+var projectRoot = path.resolve(__dirname, '../')
+var dist = path.join(projectRoot, 'dist')
+
+var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: [
-    './src'
-  ],
+  entry: {
+    app: './src/index.js'
+  },
   output: {
-    path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'vue-analytics-facebook-pixel.js',
+    path: dist,
+    filename: 'index.js',
+    library: 'VueMaterialInput',
     libraryTarget: 'umd'
   },
-  eslint: {
-    configFile: '.eslintrc.js',
-    formatter: require('eslint-friendly-formatter')
-  },
   resolve: {
-    extensions: ['', '.js', '.json']
+    extensions: ['', '.js', '.vue'],
+    fallback: [path.join(__dirname, '../node_modules')],
+    alias: {
+      'components': path.resolve(__dirname, '../src/components')
+    }
+  },
+  resolveLoader: {
+    fallback: [path.join(__dirname, '../node_modules')]
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
-      }
-    ],
     loaders: [
       {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
         test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'stage-2']
-        },
+        loader: 'babel',
+        include: projectRoot,
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  vue: {
+    loaders: {
+      sass: ExtractTextPlugin.extract(
+        'vue-style-loader', 'css-loader!sass-loader'
+      )
+    },
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['ie >= 9', 'last 5 versions']
+      })
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+    new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
+    new webpack.optimize.OccurenceOrderPlugin()
+  ]
 }

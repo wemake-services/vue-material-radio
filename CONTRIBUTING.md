@@ -1,8 +1,8 @@
-# Contributing to vue-analytics-facebook-pixel
+# Contributing to vue-material-radio
 
 ## Pull Requests Welcome
 
-1. Fork `vue-analytics-facebook-pixel`
+1. Fork `vue-material-radio`
 2. Create a topic branch
 3. Make logically-grouped commits with clear commit messages
 4. Push commits to your fork
