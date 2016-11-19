@@ -1,59 +1,38 @@
 var path = require('path')
-var projectRoot = path.resolve(__dirname, '../')
-var dist = path.join(projectRoot, 'dist')
-
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: {
-    app: './src/index.js'
-  },
+  entry: [
+    './src'
+  ],
   output: {
-    path: dist,
-    filename: 'index.js',
-    library: 'VueMaterialInput',
+    path: path.resolve(__dirname, '..', 'dist'),
+    filename: 'vue-analytics-facebook-pixel.js',
     libraryTarget: 'umd'
   },
-  resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
-    alias: {
-      'components': path.resolve(__dirname, '../src/components')
-    }
+  eslint: {
+    configFile: '.eslintrc.js',
+    formatter: require('eslint-friendly-formatter')
   },
-  resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+  resolve: {
+    extensions: ['', '.js', '.json']
   },
   module: {
-    loaders: [
-      {
-        test: /\.vue$/,
-        loader: 'vue'
-      },
+    preLoaders: [
       {
         test: /\.js$/,
-        loader: 'babel',
-        include: projectRoot,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      }
+    ],
+    loaders: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'stage-2']
+        },
         exclude: /node_modules/
       }
     ]
-  },
-  vue: {
-    loaders: {
-      sass: ExtractTextPlugin.extract(
-        'vue-style-loader', 'css-loader!sass-loader'
-      )
-    },
-    postcss: [
-      require('autoprefixer')({
-        browsers: ['ie >= 9', 'last 5 versions']
-      })
-    ]
-  },
-  plugins: [
-    new ExtractTextPlugin('style.css'),
-    new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
-    new webpack.optimize.OccurenceOrderPlugin()
-  ]
+  }
 }
