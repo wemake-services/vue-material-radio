@@ -52,6 +52,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.IgnorePlugin(/^(jss|jss-preset-default)$/),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
     new webpack.optimize.OccurenceOrderPlugin()

@@ -1569,6 +1569,23 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
+css-loader:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.26.0.tgz#160d378f5b8e0fd4ff6daf4f3580e2219b33025f"
+  dependencies:
+    babel-code-frame "^6.11.0"
+    css-selector-tokenizer "^0.7.0"
+    cssnano ">=2.6.1 <4"
+    loader-utils "~0.2.2"
+    lodash.camelcase "^4.3.0"
+    object-assign "^4.0.1"
+    postcss "^5.0.6"
+    postcss-modules-extract-imports "^1.0.0"
+    postcss-modules-local-by-default "^1.0.1"
+    postcss-modules-scope "^1.0.0"
+    postcss-modules-values "^1.1.0"
+    source-list-map "^0.1.4"
+
 css-loader@^0.25.0:
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.25.0.tgz#c3febc8ce28f4c83576b6b13707f47f90c390223"
@@ -1602,6 +1619,20 @@ css-selector-tokenizer@^0.6.0:
     cssesc "^0.1.0"
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
+
+css-selector-tokenizer@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/css-selector-tokenizer/-/css-selector-tokenizer-0.7.0.tgz#e6988474ae8c953477bf5e7efecfceccd9cf4c86"
+  dependencies:
+    cssesc "^0.1.0"
+    fastparse "^1.1.1"
+    regexpu-core "^1.0.0"
+
+css-vendor@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/css-vendor/-/css-vendor-0.3.8.tgz#6421cfd3034ce664fe7673972fd0119fc28941fa"
+  dependencies:
+    is-in-browser "^1.0.2"
 
 css-what@2.1:
   version "2.1.0"
@@ -3134,6 +3165,10 @@ is-glob@^3.0.0:
   dependencies:
     is-extglob "^2.1.0"
 
+is-in-browser@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/is-in-browser/-/is-in-browser-1.0.2.tgz#f688bea8f1e5aadc3244ebc870d188cfb9b613cf"
+
 is-lower-case@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/is-lower-case/-/is-lower-case-1.1.3.tgz#7e147be4768dc466db3bfb21cc60b31e6ad69393"
@@ -3420,6 +3455,67 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
+jss:
+  version "5.5.6"
+  resolved "https://registry.yarnpkg.com/jss/-/jss-5.5.6.tgz#30107928dc6f608f6b8e3e70e0577edc8a94e216"
+  dependencies:
+    is-in-browser "^1.0.2"
+    murmurhash-js "^1.0.0"
+    warning "^3.0.0"
+
+jss-camel-case@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/jss-camel-case/-/jss-camel-case-2.0.2.tgz#62776f1480c4a2d4270745ab6ec6cb9f29a1e4e5"
+
+jss-compose@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jss-compose/-/jss-compose-1.1.0.tgz#e07e1c5dc881164ce261f4f2c3b53c755fa31ca4"
+  dependencies:
+    warning "^3.0.0"
+
+jss-default-unit@^4.1.0:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/jss-default-unit/-/jss-default-unit-4.1.3.tgz#301ace90cf4c2c06aca7198de1c7b86152bb3585"
+
+jss-expand@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/jss-expand/-/jss-expand-1.6.0.tgz#a7b3eb0de911326eff8cecb6884b3662f405303b"
+
+jss-extend@^2.0.4:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/jss-extend/-/jss-extend-2.0.6.tgz#fc99e334b4e3feb96ce3382dcd22792ab00496b0"
+  dependencies:
+    warning "^3.0.0"
+
+jss-nested@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/jss-nested/-/jss-nested-2.5.0.tgz#d1a5ec778bcc3352616c8917abbed0b80ef1286f"
+  dependencies:
+    warning "^3.0.0"
+
+jss-preset-default:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/jss-preset-default/-/jss-preset-default-0.8.0.tgz#e409c5135598275a3ebe5673050b5cb11f0fd5c5"
+  dependencies:
+    jss-camel-case "^2.0.1"
+    jss-compose "^1.1.0"
+    jss-default-unit "^4.1.0"
+    jss-expand "^1.6.0"
+    jss-extend "^2.0.4"
+    jss-nested "^2.5.0"
+    jss-props-sort "^2.0.0"
+    jss-vendor-prefixer "^3.0.0"
+
+jss-props-sort@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/jss-props-sort/-/jss-props-sort-2.0.2.tgz#ea74663d43970d68553008d7c3eb07859ef45ea1"
+
+jss-vendor-prefixer@^3.0.0:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-3.0.3.tgz#b36a9cb36273707595d8b60c84d07d60947e8254"
+  dependencies:
+    css-vendor "^0.3.8"
+
 karma-coverage@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/karma-coverage/-/karma-coverage-1.1.1.tgz#5aff8b39cf6994dc22de4c84362c76001b637cf6"
@@ -3691,6 +3787,10 @@ lodash.camelcase@^3.0.1:
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-3.0.1.tgz#932c8b87f8a4377897c67197533282f97aeac298"
   dependencies:
     lodash._createcompounder "^3.0.0"
+
+lodash.camelcase@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
 lodash.clonedeep@^4.3.2:
   version "4.5.0"
@@ -4094,6 +4194,10 @@ ms@0.7.1:
 ms@0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
+
+murmurhash-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/murmurhash-js/-/murmurhash-js-1.0.0.tgz#b06278e21fc6c37fa5313732b0412bcb6ae15f51"
 
 mute-stream@0.0.5:
   version "0.0.5"
@@ -6351,6 +6455,12 @@ vuex-router-sync@next:
 vuex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.0.0.tgz#26befa44de220f009e432d1027487bff29571cee"
+
+warning@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  dependencies:
+    loose-envify "^1.0.0"
 
 watchpack@^0.2.1:
   version "0.2.9"
