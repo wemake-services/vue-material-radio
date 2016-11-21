@@ -12,7 +12,8 @@
         :value="value"
         :disabled="disabled" />
 
-      <MaterialRipple v-if="ripple && !disabled"></MaterialRipple>
+      <MaterialRipple
+        v-if="ripple && isChecked && !disabled"></MaterialRipple>
     </div>
 
     <label

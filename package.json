@@ -1,6 +1,6 @@
 {
   "name": "vue-material-radio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple implementation of Material Radio Button with no dependencies",
   "author": "sobolevn <mail@sobolevn.me>",
   "private": false,
