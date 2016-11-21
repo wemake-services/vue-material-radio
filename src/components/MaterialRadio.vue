@@ -1,7 +1,8 @@
 <template>
-  <div class="material-radio__component" :class="computedClasses">
+  <div class="material-radio__component">
     <div
       class="material-radio-wrapper"
+      :class="computedClasses"
       @click="check">
 
       <input
@@ -26,29 +27,19 @@
 
 <script>
   import MaterialRipple from 'vue-material-ripple'
-  import MaterialThemeFactory from 'vue-material-theme'
-
-  import { defaultTheme, createTheme } from './theme'
 
   // Component declaration:
-  const Component = {
+  export default {
     name: 'material-radio',
     computed: {
       isChecked () {
-        return this.value &&
-          this.expected.toString() === this.value.toString()
+        return this.expected.toString() === this.value.toString()
       },
       computedClasses () {
-        const classes = {
+        return {
           'material-radio--checked': this.isChecked,
           'material-radio--disabled': this.disabled
         }
-
-        if (this.classes && this.classes['material-radio__component']) {
-          classes[this.classes['material-radio__component']] = true
-        }
-
-        return classes
       }
     },
     methods: {
@@ -62,11 +53,11 @@
     props: {
       expected: {
         type: [String, Boolean, Number],
-        required: true,
+        required: true
       },
       value: {
         type: [String, Boolean, Number],
-        required: true,
+        required: true
       },
       name: {
         type: String
@@ -83,15 +74,10 @@
         default: false
       }
     },
-    mixins: [
-      MaterialThemeFactory(createTheme, defaultTheme)
-    ],
     components: {
       MaterialRipple
     }
   }
-
-  export default Component
 </script>
 
 <style lang="sass">
@@ -128,18 +114,6 @@
     position: relative;
     vertical-align: middle;
 
-    // Checked state:
-
-    &.material-radio--checked {
-      .material-radio-wrapper {
-        &:after {
-          opacity: 1;
-          transform: scale3D(1, 1, 1);
-          transition: $swift-ease-out;
-        }
-      }
-    }
-
     .material-radio-wrapper {
       width: $size-radio;
       height: $size-radio;
@@ -153,8 +127,6 @@
       position: relative;
       display: inline-block;
       vertical-align: middle;
-
-      // overflow: hidden;
 
       &:after {
         position: absolute;
@@ -171,6 +143,14 @@
         transition: $swift-ease-in;
 
         content: " ";
+      }
+
+      &.material-radio--checked {  // Checked state
+        &:after {
+          opacity: 1;
+          transform: scale3D(1, 1, 1);
+          transition: $swift-ease-out;
+        }
       }
 
       input {
@@ -210,6 +190,44 @@
       &.ripple--animation {
         animation: ripple 1s $swift-ease-out-timing-function,
       }
+    }
+  }
+
+  // Style:
+
+  $color-dark-grey: rgba(0, 0, 0, .54);
+  $color-grey: rgba(0, 0, 0, .26);
+  $color-blue: #2196F3;
+
+  .material-radio__component {
+    .material-radio-wrapper {
+      // Basic styles:
+      border-color: $color-dark-grey;
+
+      &.material-radio--checked {  // highlighted style
+        border-color: $color-blue;
+
+        &:after {
+          background-color: $color-blue;
+        }
+      }
+
+      &.material-radio--disabled {  // disabled style
+        border-color: $color-grey;
+
+        &:after {
+          background-color: $color-grey;
+        }
+      }
+
+      .material-radio-label {
+        color: $color-grey;
+      }
+    }
+
+    // Ripple:
+    .ripple__component {
+      background-color: $color-blue;
     }
   }
 

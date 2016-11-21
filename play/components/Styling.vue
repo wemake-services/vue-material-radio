@@ -1,56 +1,39 @@
 <template>
   <form class="example">
-    <p>Input any valid css colors</p>
-
     <MaterialRadio
+      class="material-radio--orange"
       name="checked"
       :expected="true"
       v-model="value"
-      :theme="theme">
+      :disabled="disabled"
+      :ripple="true">
         Label
     </MaterialRadio>
 
     <div class="example-field">
-      <label>Color Base</label>
-      <input type="text" v-model="options.colorBase" />
+      <label>Disabled</label>
+      <input type="checkbox" v-model="disabled" />
     </div>
 
-    <div class="example-field">
-      <label>Color Hightlight</label>
-      <input type="text" v-model="options.colorHighlight" />
-    </div>
-
-    <div class="example-field">
-      <label>Color Disabled</label>
-      <input type="text" v-model="options.colorDisabled" />
-    </div>
+    <button type="button" @click="clean">Clean</button>
   </form>
 </template>
 
 <script>
   import MaterialRadio from '../../src/components/MaterialRadio.vue'
 
-  import { createTheme } from '../../src/components/theme.js'
-
   export default {
     name: 'material-constructor',
     data: function () {
       return {
         value: false,
-        options: {
-          colorBase: 'black',
-          colorHighlight: 'blue',
-          colorDisabled: 'grey'
-        }
+        disabled: false
       }
     },
-    computed: {
-      theme () {
-        const t = createTheme(this.options)
-
-        console.log(t)
-
-        return t
+    methods: {
+      clean () {
+        this.value = false
+        this.disabled = false
       }
     },
     components: {
@@ -58,3 +41,39 @@
     }
   }
 </script>
+
+<style lang="sass">
+  $color-base: #FFCCBC;
+  $color-highlight: #FF5722;
+  $color-disabled: #9E9E9E;
+
+  .material-radio--orange {
+    .material-radio-wrapper {
+      border-color: $color-base;
+
+      &.material-radio--checked {  // highlighted style
+        border-color: $color-highlight;
+
+        &:after {
+          background-color: $color-highlight;
+        }
+      }
+
+      &.material-radio--disabled {  // disabled style
+        border-color: $color-disabled;
+
+        &:after {
+          background-color: $color-disabled;
+        }
+      }
+
+      .material-radio-label {
+        color: $color-disabled;
+      }
+    }
+
+    .ripple__component {
+      background-color: $color-highlight;
+    }
+  }
+</style>

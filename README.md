@@ -12,4 +12,17 @@ npm install vue-material-radio
 
 ## Usage
 
+This component is designed to be small and easy:
+
+```vue
+<MaterialRadio
+  name="checked"
+  :expected="true"
+  v-model="checked"
+  :disabled="disabled"
+  :ripple="ripple">
+    Your Label
+</MaterialRadio>
+```
+
 For more examples, please check [`/play`](https://github.com/wemake-services/vue-material-radio/tree/master/play) folder and the [project's website](http://wemake.services/vue-material-radio).

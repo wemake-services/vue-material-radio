@@ -5,6 +5,55 @@ describe('MaterialRadio.vue', () => {
   let component
 
   beforeEach(() => {
-    component = getComponent(MaterialRadio, {})
+    component = getComponent(MaterialRadio, {
+      expected: true,
+      value: false
+    })
+  })
+
+  it('renders correct default computedClasses', () => {
+    const classes = component.computedClasses
+
+    expect(classes).to.deep.equal({
+      'material-radio--checked': false,
+      'material-radio--disabled': false
+    })
+  })
+
+  it('renders correct disabled and checked computedClasses', () => {
+    const classes = getComponent(MaterialRadio, {
+      expected: true,
+      value: true,
+      disabled: true
+    }).computedClasses
+
+    expect(classes).to.deep.equal({
+      'material-radio--checked': true,
+      'material-radio--disabled': true
+    })
+  })
+
+  it('ensures that isChecked works correctly', () => {
+    expect(component.isChecked).to.equal(false)
+
+    const checked = getComponent(MaterialRadio, {
+      expected: true,
+      value: true
+    })
+
+    expect(checked.isChecked).to.equal(true)
+  })
+
+  it('ensures that check() emits events', () => {
+    let test = null
+    const passed = 'passed'
+
+    component.$on('input', function () {
+      test = passed
+    })
+
+    component.check()
+
+    expect(test).to.equal(passed)
   })
 })
