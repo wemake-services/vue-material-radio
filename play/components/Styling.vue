@@ -72,7 +72,7 @@
       }
     }
 
-    .ripple__component {
+    .material-ripple__component {
       background-color: $color-highlight;
     }
   }

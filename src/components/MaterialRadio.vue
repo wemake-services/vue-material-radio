@@ -1,19 +1,24 @@
 <template>
   <div class="material-radio__component">
-    <div
-      class="material-radio-wrapper"
-      :class="computedClasses"
-      @click="check">
 
-      <input
-        type="radio"
-        :name="name"
-        :id="id"
-        :value="value"
-        :disabled="disabled" />
+    <div class="material-radio">
+      <div
+        class="material-radio-wrapper"
+        :class="computedClasses"
+        @click="check">
+
+        <input
+          type="radio"
+          :name="name"
+          :id="id"
+          :value="value"
+          :disabled="disabled" />
+      </div>
 
       <MaterialRipple
-        v-if="ripple && isChecked && !disabled"></MaterialRipple>
+        v-if="ripple && isChecked && !disabled"
+        :center="true"
+        :size="36"></MaterialRipple>
     </div>
 
     <label
@@ -83,7 +88,7 @@
 
 <style lang="sass">
   // Installing ripple styles:
-  @import "~vue-material-ripple/style";
+  @import "~vue-material-ripple/dist/style";
 
   // Transitions:
   // Thanks to Angular Material and vue-material
@@ -115,6 +120,13 @@
     position: relative;
     vertical-align: middle;
 
+    user-select: none;
+
+    .material-radio {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
     .material-radio-wrapper {
       width: $size-radio;
       height: $size-radio;
@@ -126,8 +138,6 @@
       transition: $swift-ease-out;
 
       position: relative;
-      display: inline-block;
-      vertical-align: middle;
 
       &:after {
         position: absolute;
@@ -161,8 +171,6 @@
     }
 
     .material-radio-label {
-      user-select: none;
-
       height: $size-radio;
       line-height: $size-radio;
 
@@ -174,21 +182,11 @@
 
     // Ripple:
 
-    // This package does not use vue-material-ripple yet,
-    // since that package is not ready to create centralized animation,
-    // this functionality should be removed when
-    // https://github.com/wemake-services/vue-material-ripple/issues/7
-    // will be fixed.
-
-    .ripple__component {
-      width: $size-ripple !important;
-      height: $size-ripple !important;
-      top: -16px !important;
-      right: 0 !important;
-      bottom: 0 !important;
-      left: -16px !important;
-
+    .material-ripple__component {
       &.ripple--animation {
+        // This should be removed when
+        // https://github.com/wemake-services/vue-material-ripple/issues/11
+        // will be fixed.
         animation: ripple 1s $swift-ease-out-timing-function,
       }
     }
@@ -227,7 +225,7 @@
     }
 
     // Ripple:
-    .ripple__component {
+    .material-ripple__component {
       background-color: $color-blue;
     }
   }

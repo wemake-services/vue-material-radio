@@ -1050,8 +1050,8 @@ bytes@2.4.0:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
 
 cac@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/cac/-/cac-3.0.3.tgz#f02d451bbc8f2a7eb2708f6019393e783bffbfe0"
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/cac/-/cac-3.0.4.tgz#6d24ceec372efe5c9b798808bc7f49b47242a4ef"
   dependencies:
     camelcase-keys "^3.0.0"
     chalk "^1.1.3"
@@ -1479,7 +1479,7 @@ content-type@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/content-type/-/content-type-1.0.2.tgz#b7d113aee7a8dd27bd21133c4dc2529df1721eed"
 
-convert-source-map@^1.1.0, convert-source-map@^1.2.0:
+convert-source-map@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.3.0.tgz#e9f3e9c6e2728efc2676696a70eb382f73106a67"
 
@@ -1634,7 +1634,7 @@ cssesc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
-cssnano@^3.3.2, "cssnano@>=2.6.1 <4":
+"cssnano@>=2.6.1 <4":
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-3.8.0.tgz#bb90ac5292f42b679d9a05f6da0e9697556bb80d"
   dependencies:
@@ -2890,7 +2890,20 @@ html-minifier@^2.1.5:
     relateurl "0.2.x"
     uglify-js "2.6.x"
 
-html-minifier@^3.0.1, html-minifier@^3.1.0:
+html-minifier@^3.0.1:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.2.3.tgz#d2ff536e24d95726c332493d8f77d84dbed85372"
+  dependencies:
+    camel-case "3.0.x"
+    clean-css "3.4.x"
+    commander "2.9.x"
+    he "1.1.x"
+    ncname "1.0.x"
+    param-case "2.1.x"
+    relateurl "0.2.x"
+    uglify-js "2.7.x"
+
+html-minifier@^3.1.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/html-minifier/-/html-minifier-3.2.2.tgz#30d9fc4f22967bf056c68851e42a787bd45089a5"
   dependencies:
@@ -3964,8 +3977,8 @@ markdown-it-loader@^0.5.0:
   resolved "https://registry.yarnpkg.com/markdown-it-loader/-/markdown-it-loader-0.5.0.tgz#e07a0e96eb0b686f7015497d372effcdb745490a"
 
 markdown-it@^8.0.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.1.0.tgz#38902d4e7bac2260c073eb67be623211fbb2c2e3"
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.2.1.tgz#ac2852f8221b9406a93d41cde2d355348560ed4c"
   dependencies:
     argparse "^1.0.7"
     entities "~1.1.1"
@@ -4908,9 +4921,18 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.0, postcss@^5.2.5:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.5:
   version "5.2.5"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.5.tgz#ec428c27dffc7fac65961340a9b022fa4af5f056"
+  dependencies:
+    chalk "^1.1.3"
+    js-base64 "^2.1.9"
+    source-map "^0.5.6"
+    supports-color "^3.1.2"
+
+postcss@^5.0.21, postcss@^5.2.0:
+  version "5.2.6"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.6.tgz#a252cd67cd52585035f17e9ad12b35137a7bdd9e"
   dependencies:
     chalk "^1.1.3"
     js-base64 "^2.1.9"
@@ -6114,7 +6136,20 @@ unzip-response@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-1.0.2.tgz#b984f0877fc0a89c2c773cc1ef7b5b232b5b06fe"
 
-update-notifier@^1.0.2, update-notifier@1.0.2:
+update-notifier@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/update-notifier/-/update-notifier-1.0.3.tgz#8f92c515482bd6831b7c93013e70f87552c7cf5a"
+  dependencies:
+    boxen "^0.6.0"
+    chalk "^1.0.0"
+    configstore "^2.0.0"
+    is-npm "^1.0.0"
+    latest-version "^2.0.0"
+    lazy-req "^1.1.0"
+    semver-diff "^2.0.0"
+    xdg-basedir "^2.0.0"
+
+update-notifier@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/update-notifier/-/update-notifier-1.0.2.tgz#27c90519196dc15015be02a34ea52986feab8877"
   dependencies:
@@ -6242,6 +6277,10 @@ void-elements@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+vue, vue@^2.0.3:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.4.tgz#d490f8fcf696847d8cf7f8eb9168e9a5dd806bfc"
+
 vue-hot-reload-api@^2.0.1, vue-hot-reload-api@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.0.6.tgz#817d4bfb30f55428aa1012d029499e07f3147d21"
@@ -6256,7 +6295,24 @@ vue-html-loader@^1.2.3:
     loader-utils "^0.2.15"
     object-assign "^4.1.0"
 
-vue-loader@^9.7.0, vue-loader@^9.8.1:
+vue-loader:
+  version "10.0.2"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-10.0.2.tgz#6fe7bcefb32c5439bd0338464aa22673ad62299c"
+  dependencies:
+    consolidate "^0.14.0"
+    hash-sum "^1.0.2"
+    js-beautify "^1.6.3"
+    loader-utils "^0.2.10"
+    lru-cache "^4.0.1"
+    object-assign "^4.0.0"
+    postcss "^5.0.10"
+    postcss-selector-parser "^2.0.0"
+    source-map "^0.5.6"
+    vue-hot-reload-api "^2.0.1"
+    vue-style-loader "^1.0.0"
+    vue-template-es2015-compiler "^1.2.2"
+
+vue-loader@^9.8.1:
   version "9.9.5"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-9.9.5.tgz#0893e3093e90c8fbe852053b2b0f4854a3bf4651"
   dependencies:
@@ -6274,11 +6330,25 @@ vue-loader@^9.7.0, vue-loader@^9.8.1:
     vue-template-compiler "^2.0.5"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-material-ripple@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-material-ripple/-/vue-material-ripple-1.0.0.tgz#bc359258de2d0843710679b9091657d96a442dfc"
+vue-material-ripple:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vue-material-ripple/-/vue-material-ripple-1.1.0.tgz#995ff5af228f750f81f8c8b88205ef6ffde5cb4e"
 
-vue-play-cli@^1.0.3:
+vue-play:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-play/-/vue-play-2.1.1.tgz#ebddb2e6d728437ae8e1df8f2d9bd672c06d430c"
+  dependencies:
+    uid "0.0.2"
+    array-find-index "^1.0.2"
+    highlight.js "^9.7.0"
+    query-string "^4.2.3"
+    vue "^2.0.3"
+    vue-router "^2.0.1"
+    vue-slim-modal "^0.3.0"
+    vuex "^2.0.0"
+    vuex-router-sync next
+
+vue-play-cli:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vue-play-cli/-/vue-play-cli-1.0.4.tgz#9b941788c946bcce11de75a0fd48dc7615958f71"
   dependencies:
@@ -6321,20 +6391,6 @@ vue-play-cli@^1.0.3:
     webpack-hot-middleware "^2.13.1"
     webpack-merge "^0.15.0"
 
-vue-play@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/vue-play/-/vue-play-2.1.0.tgz#796ec92f696d639bf83696a3e3ba024b949c78db"
-  dependencies:
-    uid "0.0.2"
-    array-find-index "^1.0.2"
-    highlight.js "^9.7.0"
-    query-string "^4.2.3"
-    vue "^2.0.3"
-    vue-router "^2.0.1"
-    vue-slim-modal "^0.3.0"
-    vuex "^2.0.0"
-    vuex-router-sync next
-
 vue-router@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.0.3.tgz#444e246fd42d65a34dea6c3be8fde3315c4ba6f7"
@@ -6352,9 +6408,9 @@ vue-style-loader@^1.0.0:
   dependencies:
     loader-utils "^0.2.7"
 
-vue-template-compiler@^2.0.0-alpha.8, vue-template-compiler@^2.0.5, vue-template-compiler@2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.0.8.tgz#e91e1ed6b9b7404f8394166cfeb53eb8b620329a"
+vue-template-compiler@^2.0.5, vue-template-compiler@2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.1.4.tgz#ce99cb9c2f5842062d3b744c716224b613f198d4"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -6363,31 +6419,9 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.3.0.tgz#4a0f2a0bbef8b5731f78add8263cd86fe4f643ca"
 
-vue@^2.0.3, vue@2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.0.8.tgz#bbc191db5e1442f208604f994f03e49ac09e69d2"
-
 vueify-insert-css@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vueify-insert-css/-/vueify-insert-css-1.0.0.tgz#57e5d791907e8c9d87ae6de099a2174bd0a7f990"
-
-vueify@^9.2.4:
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/vueify/-/vueify-9.3.0.tgz#e23f98797c8308b0bcea65830618b9fd4829159a"
-  dependencies:
-    chalk "^1.1.1"
-    convert-source-map "^1.2.0"
-    cssnano "^3.3.2"
-    hash-sum "^1.0.2"
-    lru-cache "^4.0.0"
-    object-assign "^4.0.1"
-    postcss "^5.0.10"
-    postcss-selector-parser "^2.0.0"
-    source-map "^0.5.6"
-    through "^2.3.6"
-    vue-hot-reload-api "^2.0.1"
-    vue-template-compiler "^2.0.0-alpha.8"
-    vue-template-es2015-compiler "^1.2.2"
 
 vuex-router-sync@next:
   version "3.0.0"
