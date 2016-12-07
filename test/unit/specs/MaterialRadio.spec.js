@@ -11,6 +11,8 @@ describe('MaterialRadio.vue', () => {
     })
   })
 
+  // Computed:
+
   it('renders correct default computedClasses', () => {
     const classes = component.computedClasses
 
@@ -44,7 +46,9 @@ describe('MaterialRadio.vue', () => {
     expect(checked.isChecked).to.equal(true)
   })
 
-  it('ensures that check() emits events', () => {
+  // Events:
+
+  it('ensures that check() emits input event', () => {
     let test = null
     const passed = 'passed'
 
@@ -55,5 +59,41 @@ describe('MaterialRadio.vue', () => {
     component.check()
 
     expect(test).to.equal(passed)
+  })
+
+  it('ensures that check() emits change event', () => {
+    let test = null
+    const passed = 'passed'
+
+    component.$on('change', function () {
+      test = passed
+    })
+
+    component.check()
+
+    expect(test).to.equal(passed)
+  })
+
+  it('ensures that check() does not emit events when disabled', () => {
+    const inst = getComponent(MaterialRadio, {
+      expected: true,
+      value: false,
+      disabled: true
+    })
+
+    let test = null
+    const passed = 'passed'
+
+    inst.$on('input', function () {
+      test = passed
+    })
+
+    inst.$on('change', function () {
+      test = passed
+    })
+
+    inst.check()
+
+    expect(test).to.equal(null)
   })
 })

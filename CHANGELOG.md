@@ -7,6 +7,7 @@
 - Integrated new version of `vue-material-ripple` with `center` property
 - Fixed some issues
 - Updated `LICENSE.md` with the new owner
+- Added some tests to reach 100% coverage
 
 ## Version 1.0.1
 
